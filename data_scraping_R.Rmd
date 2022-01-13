@@ -10,13 +10,16 @@ library(tidyverse)
 ```
 
 ```{r}
+# Read data from the Google site https://www.google.com/covid19/mobility/
 df <- read_csv("https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv")
 ```
 ```{r}
+# Filter data
 laos <- df %>% filter(country_region_code == "LA")
 ```
 
 ```{r}
+# Export data
 write_csv(laos, "Laos_Google_community_mobility_reports.csv")
 ```
 
