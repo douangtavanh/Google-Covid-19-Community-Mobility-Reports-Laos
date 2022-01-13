@@ -1,0 +1,23 @@
+---
+title: "Google_covid_19_community_mobility_report"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+
+```{r}
+df <- read_csv("https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv")
+```
+```{r}
+laos <- df %>% filter(country_region_code == "LA")
+```
+
+```{r}
+write_csv(laos, "Laos_Google_community_mobility_reports.csv")
+```
+
+
